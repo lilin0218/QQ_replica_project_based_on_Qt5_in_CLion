@@ -45,38 +45,45 @@
 
 #### 截图展示
 
-1. 登录功能截图：
-<img width="457" height="593" alt="image" src="https://github.com/user-attachments/assets/27c71930-26f0-49a5-93b2-c6f3a9e8b0e4" />
+<h4>1. 登录 / 注册 / 注销：</h4>
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/27c71930-26f0-49a5-93b2-c6f3a9e8b0e4" width="300"/></td>
+    <td><img src="https://github.com/user-attachments/assets/93403ed9-14e1-4f3b-88ce-9088b20104f5" width="300"/></td>
+    <td><img src="https://github.com/user-attachments/assets/09a594d7-ab94-48d4-bfe6-1180ffd7e041" width="300"/></td>
+  </tr>
+</table>
 
-2. 注册功能截图：
-<img width="457" height="593" alt="image" src="https://github.com/user-attachments/assets/93403ed9-14e1-4f3b-88ce-9088b20104f5" />
+<h4>2. 主浏览界面：</h4>
+<img src="https://github.com/user-attachments/assets/a093e128-3064-4fb6-9591-25ee3017025d" width="300"/>
 
-3. 注销功能截图：
-<img width="457" height="593" alt="image" src="https://github.com/user-attachments/assets/09a594d7-ab94-48d4-bfe6-1180ffd7e041" />
+<h4>3. 添加 / 删除好友：</h4>
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/d07633d7-ab67-4c2e-b3fb-b866e036fc87" width="350"/></td>
+    <td><img src="https://github.com/user-attachments/assets/f45762b8-25d1-4a4d-8a1b-f674d885f5a7" width="350"/></td>
+  </tr>
+</table>
 
-4. 主浏览界面截图：
-<img width="482" height="759" alt="image" src="https://github.com/user-attachments/assets/a093e128-3064-4fb6-9591-25ee3017025d" />
+<h4>4. 新建群聊（仅界面，未完成功能）：</h4>
+<img src="https://github.com/user-attachments/assets/664e1225-61ba-4ef8-acd5-dfbf535ff04b" width="300"/>
 
-5. 新建群聊界面截图（未完成，仅界面）：
-<img width="412" height="615" alt="image" src="https://github.com/user-attachments/assets/664e1225-61ba-4ef8-acd5-dfbf535ff04b" />
+<h4>5. 聊天界面（10号 / 9号视角）：</h4>
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/d14114d7-542e-4078-a47c-8b36f52ac0d9" width="350"/></td>
+    <td><img src="https://github.com/user-attachments/assets/3727dbe4-ccb7-43cf-8c4c-d769fc25e8ba" width="350"/></td>
+  </tr>
+</table>
 
-6. 添加好友截图：
-<img width="802" height="746" alt="image" src="https://github.com/user-attachments/assets/d07633d7-ab67-4c2e-b3fb-b866e036fc87" />
+<h4>6. 开发者功能图表（柱图 / 饼图）：</h4>
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/feb9c859-6512-4bc5-9e84-ed258b276f9b" width="350"/></td>
+    <td><img src="https://github.com/user-attachments/assets/812d70ed-e9e8-4222-badc-84d5d59952ec" width="350"/></td>
+  </tr>
+</table>
 
-7. 删除好友截图：
-<img width="802" height="746" alt="image" src="https://github.com/user-attachments/assets/f45762b8-25d1-4a4d-8a1b-f674d885f5a7" />
-
-8. 聊天界面截图（10号视角）：
-<img width="732" height="1020" alt="image" src="https://github.com/user-attachments/assets/d14114d7-542e-4078-a47c-8b36f52ac0d9" />
-
-9. 聊天界面截图（9号视角）：
-<img width="732" height="1020" alt="image" src="https://github.com/user-attachments/assets/3727dbe4-ccb7-43cf-8c4c-d769fc25e8ba" />
-
-10. 开发者功能（根据用户持有好友数目生成柱图）：
-<img width="802" height="639" alt="image" src="https://github.com/user-attachments/assets/feb9c859-6512-4bc5-9e84-ed258b276f9b" />
-
-11. 开发者功能（根据用户持有好友数目生成饼图图）：
-<img width="802" height="639" alt="image" src="https://github.com/user-attachments/assets/812d70ed-e9e8-4222-badc-84d5d59952ec" />
 
 
 
