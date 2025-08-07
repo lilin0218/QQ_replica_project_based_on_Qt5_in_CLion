@@ -1,0 +1,79 @@
+<RCC>
+    <qresource prefix="/">
+        <file>ico/ikunlogo.png</file>
+        <file>ico/close.png</file>
+        <file>ico/qqlogo.png</file>
+        <file>ico/set.png</file>
+        <file>ico/msg.png</file>
+        <file>ico/search.png</file>
+        <file>ico/Collect.png</file>
+        <file>ico/Envelope.png</file>
+        <file>ico/Folder.png</file>
+        <file>ico/NineGrid.png</file>
+        <file>ico/QQZone.png</file>
+        <file>ico/TencentChannel.png</file>
+        <file>ico/ThreeBars.png</file>
+        <file>ico/PlusSign.png</file>
+        <file>ico/ContractPerson.png</file>
+        <file>ico/SelectAvatar.png</file>
+        <file>ico/Search.png</file>
+        <file>avatar/P (1).jpg</file>
+        <file>avatar/P (2).jpg</file>
+        <file>avatar/P (3).jpg</file>
+        <file>avatar/P (4).jpg</file>
+        <file>avatar/P (5).jpg</file>
+        <file>avatar/P (6).jpg</file>
+        <file>avatar/P (7).jpg</file>
+        <file>avatar/P (8).jpg</file>
+        <file>avatar/P (9).jpg</file>
+        <file>avatar/P (10).jpg</file>
+        <file>avatar/P (11).jpg</file>
+        <file>avatar/P (12).jpg</file>
+        <file>avatar/P (13).jpg</file>
+        <file>avatar/P (14).jpg</file>
+        <file>avatar/P (15).jpg</file>
+        <file>avatar/P (16).jpg</file>
+        <file>avatar/P (17).jpg</file>
+        <file>avatar/P (18).jpg</file>
+        <file>avatar/P (19).jpg</file>
+        <file>avatar/P (20).jpg</file>
+        <file>avatar/P (21).jpg</file>
+        <file>avatar/P (22).jpg</file>
+        <file>avatar/P (23).jpg</file>
+        <file>avatar/P (24).jpg</file>
+        <file>avatar/P (25).jpg</file>
+        <file>avatar/P (26).jpg</file>
+        <file>avatar/P (27).jpg</file>
+        <file>avatar/P (28).jpg</file>
+        <file>avatar/P (29).jpg</file>
+        <file>avatar/P (30).jpg</file>
+        <file>ico/EnterAKeyWord.png</file>
+        <file>chat_icons/BrowsingHistory.png</file>
+        <file>chat_icons/Expression.png</file>
+        <file>chat_icons/File.png</file>
+        <file>chat_icons/More.png</file>
+        <file>chat_icons/Picture.png</file>
+        <file>chat_icons/RedEnvelope.png</file>
+        <file>chat_icons/RemoteAssistance.png</file>
+        <file>chat_icons/ScreenSharing.png</file>
+        <file>chat_icons/Screenshots.png</file>
+        <file>chat_icons/StartAGroupChat.png</file>
+        <file>chat_icons/VideoCall.png</file>
+        <file>chat_icons/Voice.png</file>
+        <file>chat_icons/VoiceCall.png</file>
+        <file>chat_icons/WindowShaking.png</file>
+        <file>file_icons/audio.png</file>
+        <file>file_icons/code.png</file>
+        <file>file_icons/compressedPackage.png</file>
+        <file>file_icons/excel.png</file>
+        <file>file_icons/folder.png</file>
+        <file>file_icons/image.png</file>
+        <file>file_icons/pdf.png</file>
+        <file>file_icons/ppt.png</file>
+        <file>file_icons/text.png</file>
+        <file>file_icons/unknown.png</file>
+        <file>file_icons/video.png</file>
+        <file>file_icons/web.png</file>
+        <file>file_icons/word.png</file>
+    </qresource>
+</RCC>

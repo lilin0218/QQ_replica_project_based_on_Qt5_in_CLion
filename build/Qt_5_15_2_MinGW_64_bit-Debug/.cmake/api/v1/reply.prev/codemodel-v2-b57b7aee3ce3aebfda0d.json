@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.31"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Heart",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Heart::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Heart-Debug-bc9097f5ad818d05c9e0.json",
+					"name" : "Heart",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Heart_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Heart_autogen-Debug-e7b9507a11bbf46a4dcf.json",
+					"name" : "Heart_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Heart_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Heart_autogen_timestamp_deps-Debug-cf59d34cb6840854dae0.json",
+					"name" : "Heart_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/APP/Exercise/Qt_Exercise/Qt_Exercise_CLion/Heart/build/Qt_5_15_2_MinGW_64_bit-Debug",
+		"source" : "D:/APP/Exercise/Qt_Exercise/Qt_Exercise_CLion/Heart"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
