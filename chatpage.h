@@ -31,6 +31,9 @@ private:
     QString m_curAvatar;    //当前用户头像
     QString m_friendAvatar;    //好友头像
 
+    QTimer *m_checkHeartTimer;
+    QMap<int,QDateTime>m_lastHeartMap;//记录每个客户端最后一次发来的心跳时间
+
     //  网络成员变量
     MyClient *m_client;
     QTcpSocket *m_socket;
@@ -71,7 +74,6 @@ private:
     QString formatFileSize(qint64 bytes);
     //圆形头像生成
     QPixmap createCircularPix(const QPixmap &source);
-
 public slots:
     //监听消息接收
     void onMsgFromMainPage(const QByteArray &data, int curId, int senderId);
@@ -88,6 +90,8 @@ private slots:
     //网络连接结果处理
     void onConnected(int friendId);
     void onConnectFailed(int friendId);
+    //时间到，检测心跳包的时间表
+    void checkHeartTime();
 
 protected:
     //重写拦截关闭事件

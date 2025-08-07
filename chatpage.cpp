@@ -29,11 +29,13 @@ ChatPage::ChatPage(DatabaseManager& db, const int &curId,
     initButton();
     initClient(m_friendId);
     initHistory();
-
     //ChatPage打开后注册
     ChatManager::instance()->registerChatPage(m_curId,m_friendId,this);
     ChatManager::instance()->registerClient(m_curId,m_friendId,m_client);//要等m_client初始化
     ChatManager::instance()->registerSocket(m_curId,m_friendId,m_socket);
+    //添加心跳检测计时器
+    m_checkHeartTimer = new QTimer(this);
+    connect(m_checkHeartTimer,&QTimer::timeout,this,&ChatPage::checkHeartTime);
 }
 
 ChatPage::~ChatPage()
@@ -567,6 +569,15 @@ void ChatPage::onConnectFailed(int friendId) {
         "网络:已从与【用户:%1】的网络连接中断开").arg(friendId));
 }
 
+void ChatPage::checkHeartTime() {
+    QDateTime now = QDateTime::currentDateTime();
+    for (auto it=m_lastHeartMap.begin();it!=m_lastHeartMap.end();++it) {
+        if (it.value().secsTo(now)>20) {
+            qDebug() << QString("【客户端%1】 超时未发送心跳，视为掉线").arg(it.key());
+        }
+    }
+}
+
 void ChatPage::closeEvent(QCloseEvent *event) {
     //1.先移除注册（但不delete this）
     //2.清理Socket
@@ -630,7 +641,17 @@ void ChatPage::onMsgFromMainPage(const QByteArray &data, int curId, int senderId
         //4.3 数据库更新
         updateDB(senderId,curId,"[窗口抖动]",2,now_shake,1,false);
 
-    } else if (type == "fileHeader") {
+    }else if (type == "heart") {
+        //4.1 日志
+        QString log=QString("二次解析：【发送者:%1】【接收者:%2】【类型:%3】"
+            ).arg(sender).arg(receiver).arg(type);
+        qDebug()<<log;
+        //4.2 处理心跳包
+        QDateTime now=QDateTime::currentDateTime();
+        m_lastHeartMap[senderId]=now;
+        qDebug()<<"收到一次心跳包,最后时间更新为:"<<now.toString();
+
+    }else if (type == "fileHeader") {
         //4.1 解析文件参数
         QString fileName=obj["filename"].toString();
         qint64 fileSize=obj["filesize"].toString().toLongLong();

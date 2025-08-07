@@ -2,17 +2,22 @@
 #include <QHostAddress>
 #include <QDataStream>
 #include <QDebug>
+#include "protocol.h"
 
 MyClient::MyClient(int curId, int friendId, QObject* parent): QObject(parent) {
     //1.日志
     m_socket=new QTcpSocket(this);
     m_curId=curId;
     m_friendId=friendId;
+    m_heartTimer=new QTimer(this);
     qDebug() << "创建MyClient对象，用户ID为："<<m_curId<<"好友ID为："<<m_friendId;
     //2.连接槽函数
     connect(m_socket, &QTcpSocket::connected, this, &MyClient::onConnected);
     connect(m_socket, &QTcpSocket::disconnected, this, &MyClient::onDisconnected);
     connect(m_socket, &QTcpSocket::readyRead, this, &MyClient::onReadyRead);
+    connect(m_heartTimer,&QTimer::timeout,this,&MyClient::sendHeartMsg);
+    //3. 启动心跳计时器
+    m_heartTimer->start(5000);
 }
 
 void MyClient::connectToHost() {
@@ -59,4 +64,10 @@ void MyClient::onDisconnected() {
 void MyClient::onReadyRead() {
     QByteArray data=m_socket->readAll();
     emit msgReceived(data);
+}
+
+void MyClient::sendHeartMsg() {
+    QByteArray data=Protocol::createHeartMsg(m_curId,m_friendId);
+    m_socket->write(data);
+    qDebug() << QString("【客户端%1】向【服务端%2】发送了一次心跳包").arg(m_curId).arg(m_friendId);
 }

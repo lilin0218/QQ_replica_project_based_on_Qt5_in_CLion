@@ -27,6 +27,15 @@ QByteArray Protocol::createShakeMsg(int sender, int receiver) {
     return QJsonDocument(obj).toJson();
 }
 
+QByteArray Protocol::createHeartMsg(int sender, int receiver) {
+    QJsonObject obj;
+    obj["type"] = "heart";
+    obj["sender"] = sender;
+    obj["receiver"] = receiver;
+    obj["data"] = "heart";
+    return QJsonDocument(obj).toJson();
+}
+
 QByteArray Protocol::createFileHeader(int sender, int receiver, const QString& filename, qint64 filesize) {
     QJsonObject obj;
     obj["type"] = "fileHeader";
@@ -104,6 +113,7 @@ QString Protocol::typeToString(MsgType type) {
     case TEXT: return "text";
     case IMAGE: return "image";
     case SHAKE: return "shake";
+    case Heart: return "heart";
     case FILE_HEADER: return "fileHeader";
     case FILE_CHUNK: return "fileChunk";
     case FILE_DONE: return "fileDone";

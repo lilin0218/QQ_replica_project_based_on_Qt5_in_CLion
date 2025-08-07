@@ -11,6 +11,7 @@ public:
         TEXT,
         IMAGE,
         SHAKE,
+        Heart,
         FILE_HEADER,
         FILE_CHUNK,
         FILE_DONE
@@ -20,6 +21,7 @@ public:
     static QByteArray createTextMsg(int sender, int receiver, const QString& text);
     static QByteArray createImageMsg(int sender, int receiver, const QString& imagePath);
     static QByteArray createShakeMsg(int sender, int receiver);
+    static QByteArray createHeartMsg(int sender, int receiver);
     static QByteArray createFileHeader(int sender, int receiver, const QString& filename, qint64 filesize);
     static QByteArray createFileChunk(int sender, int receiver, const QByteArray& chunkBase64);
     static QByteArray createFileDone(int sender, int receiver);

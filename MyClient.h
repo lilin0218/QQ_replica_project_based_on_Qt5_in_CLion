@@ -3,8 +3,8 @@
 
 #include <QObject>
 #include <QTcpSocket>
-#include <QMap>
 #include <QTcpServer>
+#include <QTimer>
 
 class MyClient : public QObject {
     Q_OBJECT
@@ -32,11 +32,13 @@ private slots:
     void onConnected();
     void onDisconnected();
     void onReadyRead();
+    void sendHeartMsg();//时间到，该发送一次心跳包到服务器
 
 private:
     QTcpSocket *m_socket;//每个socket由创建它的MyClient管理
     int m_curId;
     int m_friendId;
+    QTimer *m_heartTimer;
 };
 
 #endif //MYCLIENT_H
