@@ -26,12 +26,15 @@
 
 #### 安装教程
 
-1. 安装 Qt 5.15.2（建议使用官方 Qt Online Installer）
-2. 配置 CLion + MinGW 8.1.0 环境，确保支持 Qt CMake 构建
-3. 克隆本仓库：
-   git clone https://gitee.com/lilin0218/qq_replica_project_based_on_-qt5_in_-clion.git
-4. 使用 CLion 打开项目根目录，自动加载 CMakeLists.txt
-5. 构建并运行项目（初次运行建议清空缓存并重新 CMake reload）
+1. 在Qt的在线安装工具中选择安装 Qt 5.15.2，QCharts模块（可选）
+2. 在CLion中选择Qt微件，选择Qt5打开该项目
+3. 修改cmake当中内容：# Qt 安装路径  set(CMAKE_PREFIX_PATH "D:/APP/QT5/5.15.2/mingw81_64")
+4. 如果不需要图标模块要删除对QCharts的引用（添加和删除模块在cmake当中这样操作）：
+   find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets Network Sql Charts)
+   foreach(QT_LIB Core Gui Widgets Charts Network Sql)
+5. Qt如果使用数据库报错（使用SQLite应该不会，MySQL需要额外下载dll），需要额外下载自己Qt版本对应的数据库dll
+6. CLion中无法运行数据库（缺少dll库）：在终端中执行：& "D:\APP\QT5\5.15.2\mingw81_64\bin\windeployqt.exe" "cmake-build-debug\Heart.exe"
+7. 当clion检测不到ui文件，但是却能运行时：在cmake中添加：include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 #### 使用说明
 
@@ -45,17 +48,10 @@
 
 #### 参与贡献
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+略
 
 
 #### 特技
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+略
+
