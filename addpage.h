@@ -1,10 +1,8 @@
 #ifndef ADDPAGE_H
 #define ADDPAGE_H
 
-#include <QWidget>
 #include <qbuttongroup.h>
 #include <qlistwidget.h>
-
 #include "databasemanager.h"
 
 namespace Ui {

@@ -1,5 +1,4 @@
 #include "appconfig.h"
-
 #include <QFileInfo>
 
 QVector<QString> AppConfig::m_icoPath;

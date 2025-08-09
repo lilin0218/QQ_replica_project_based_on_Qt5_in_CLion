@@ -5,9 +5,7 @@
 // You may need to build the project (run Qt uic code generator) to get "ui_DeveloperPage.h" resolved
 
 #include "DeveloperPage.h"
-
 #include <QMessageBox>
-
 #include "ui_DeveloperPage.h"
 #include <QtCharts/QChartView>
 #include <QtCharts/QChart>

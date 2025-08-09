@@ -26,7 +26,7 @@ public:
     static QByteArray createFileChunk(int sender, int receiver, const QByteArray& chunkBase64);
     static QByteArray createFileDone(int sender, int receiver);
 
-    // 解析消息
+    // 解析消息(两个都需要保存，后者在初次解析使用，后者在二次解析使用)
     static QJsonObject parseMsg(const QByteArray& rawData); //旧版，解析单条
     static QList<QJsonObject> parseMultiMsg(const QByteArray& rawData); //新版，解析多条
 

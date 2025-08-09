@@ -144,12 +144,8 @@ public:
                     std::function<void(bool)> callback);
     //清空数据保留表结构
     bool resetDB();
-    //清空数据保留表结构(异步)
-    void resetDBAsync(std::function<void(bool)> callback);
     //彻底删除数据库
     bool destroyDB();
-    //彻底删除数据库（异步）
-    void destroyDBAsync(std::function<void(bool)> callback);
     //打印全部数据库用户
     static void printAllUsers(DatabaseManager& db);
     //返回按好友数目排序的数组（用于图标生成）

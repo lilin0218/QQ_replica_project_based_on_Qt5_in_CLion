@@ -2,8 +2,6 @@
 #define CHATMANAGER_H
 
 #include <QObject>
-#include <QMap>
-
 #include "addpage.h"
 #include "mainpage.h"
 

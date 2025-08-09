@@ -1,7 +1,6 @@
 #ifndef LOGINPAGE_H
 #define LOGINPAGE_H
 
-#include <QWidget>
 #include <QEvent>
 #include <QMouseEvent>
 #include "loginpage.h"
@@ -14,7 +13,6 @@
 #include "mainpage.h"
 #include <QRandomGenerator>
 #include <QDateTime>
-#include <QLabel>
 
 namespace Ui {
 class LoginPage;

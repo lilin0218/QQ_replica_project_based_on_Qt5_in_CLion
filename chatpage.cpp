@@ -13,7 +13,6 @@
 #include "appconfig.h"
 #include <QProcess>
 #include <QCryptographicHash>
-
 #include "ChatManager.h"
 #include "MyClient.h"
 
@@ -91,6 +90,7 @@ void ChatPage::initClient(int friendId) {
 }
 
 void ChatPage::initHistory() {
+    isLoading=true;
     //1.查询数据库，获取所有字段的聊天记录
     QStringList fields={"sender_id","receiver_id"
         ,"content","content_type","send_time"};
@@ -136,7 +136,7 @@ void ChatPage::initHistory() {
                 qWarning() << "Unknown content_type:" << type;
         }
     }
-
+    isLoading=false;
 }
 
 
@@ -234,6 +234,7 @@ void ChatPage::addImageMsg(const QString& avatarPath, const QDateTime& time, boo
 
 //3.添加一个晃动窗口气泡到窗口
 void ChatPage::addShakeMsg(const QString& avatarPath, const QDateTime& time, bool isMine) {
+    if (isLoading)return;
     //1.晃动自身窗口
     shakeWindow(this);
     //2.创建widget

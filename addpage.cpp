@@ -8,7 +8,6 @@
 #include <QMessageBox>
 #include <QPainter>
 #include <QPainterPath>
-
 #include "ChatManager.h"
 #include "mainpage.h"
 

@@ -52,7 +52,7 @@ private slots:
     void openAddPage();//more-》加好友
     void openChatPage(QListWidgetItem *item);//当点击item时，打开与这名联系人的新聊天窗口
 
-    void parseMsg(const QByteArray &data,QTcpSocket *socket);//解析接收到的消息
+    void parseMsg(const QByteArray &data);//解析接收到的消息
 
 protected:
     //重写拦截关闭事件

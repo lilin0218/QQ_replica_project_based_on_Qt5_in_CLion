@@ -3,6 +3,7 @@
 #include <QDataStream>
 #include <QDebug>
 #include "protocol.h"
+#include "appconfig.h"
 
 MyClient::MyClient(int curId, int friendId, QObject* parent): QObject(parent) {
     //1.日志
@@ -22,7 +23,8 @@ MyClient::MyClient(int curId, int friendId, QObject* parent): QObject(parent) {
 
 void MyClient::connectToHost() {
     quint16 port = 8000+m_friendId;
-    m_socket->connectToHost(QHostAddress("127.0.0.1"), port);
+    QString ip=AppConfig::getServerIp();
+    m_socket->connectToHost(QHostAddress(ip), port);
     qDebug() << QString("【用户%1】尝试连接好友【%2】端口【%3】"
         ).arg(m_curId).arg(m_friendId).arg(port);
 }

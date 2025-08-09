@@ -176,6 +176,9 @@ void MainPage::openAddPage() {
 
 void MainPage::openChatPage(QListWidgetItem *item) {
     int friendId=item->data(Qt::UserRole).toInt();
+
+    if (ChatManager::instance()->getChatPage(m_curId,friendId)) return;
+
     ChatPage *c=new ChatPage(m_db,m_curId,friendId);
     c->show();//chat的注册在chat的init中
 }
@@ -188,7 +191,7 @@ void MainPage::refresh() {
     initListWidget();
 }
 
-void MainPage::parseMsg(const QByteArray &data, QTcpSocket *socket) {
+void MainPage::parseMsg(const QByteArray &data) {
     //1.解析消息
     QList<QJsonObject> list=Protocol::parseMultiMsg(data);
     //2.提取初步信息

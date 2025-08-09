@@ -31,6 +31,8 @@ private:
     QString m_curAvatar;    //当前用户头像
     QString m_friendAvatar;    //好友头像
 
+    bool isLoading=false;//防止加载历史记录时执行屏幕晃动
+
     QTimer *m_checkHeartTimer;
     QMap<int,QDateTime>m_lastHeartMap;//记录每个客户端最后一次发来的心跳时间
 

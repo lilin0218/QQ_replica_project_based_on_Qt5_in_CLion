@@ -360,7 +360,7 @@ bool DatabaseManager::upsertLastMessageBoth(int userId, int friendId, const QStr
     query.addBindValue(userId);
     query.addBindValue(lastMessage);
     query.addBindValue(lastMessageTime);
-    query.addBindValue(0); // 好友视角一般默认 unreadCount = 0
+    query.addBindValue(0);
     query.addBindValue(false); // 不置顶
     if (!query.exec()) {
         qWarning() << "Failed to upsert lastMessage (friend):" << query.lastError().text();
@@ -519,16 +519,6 @@ bool DatabaseManager::resetDB() {
     return true;
 }
 
-void DatabaseManager::resetDBAsync(std::function<void(bool)> callback) {
-    PoolManager::submit([=]()->QVariant {
-        return resetDB();
-    },[callback](QVariant result) {
-        if (callback) {
-            callback(result.toBool());
-        }
-    });
-}
-
 bool DatabaseManager::destroyDB() {
     if (m_mainConn.isOpen()) {
         m_mainConn.close();
@@ -541,16 +531,6 @@ bool DatabaseManager::destroyDB() {
         }
     }
     return true;
-}
-
-void DatabaseManager::destroyDBAsync(std::function<void(bool)> callback) {
-    PoolManager::submit([=]()->QVariant {
-        return destroyDB();
-    },[callback](QVariant result) {
-        if (callback) {
-            callback(result.toBool());
-        }
-    });
 }
 
 void DatabaseManager::printAllUsers(DatabaseManager &db) {

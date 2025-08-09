@@ -1,86 +1,106 @@
 cmake_minimum_required(VERSION 3.31)
-project(Heart)
+project(Heart LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
+# Qt 安装路径
 set(CMAKE_PREFIX_PATH "D:/APP/QT5/5.15.2/mingw81_64")
 
-find_package(Qt5 COMPONENTS
-    Core
-    Gui
-    Widgets
-    Network
-    Sql
-    Charts
-    REQUIRED)
+find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets Network Sql Charts)
 
-add_executable(Heart
-    main.cpp
-    appconfig.h appconfig.cpp
-    databasemanager.h databasemanager.cpp
-        protocol.h protocol.cpp
-    loginpage.h loginpage.cpp loginpage.ui
-    res.qrc
-    poolmanager.h poolmanager.cpp
-    mainpage.h mainpage.cpp mainpage.ui
-
-
-    chatpage.h chatpage.cpp chatpage.ui
-    dynamicgradientbg.h dynamicgradientbg.cpp
-    createpage.h createpage.cpp createpage.ui
-    addpage.h addpage.cpp addpage.ui
+set(SOURCES
+        main.cpp
+        appconfig.cpp
+        databasemanager.cpp
+        protocol.cpp
+        loginpage.cpp
+        poolmanager.cpp
+        mainpage.cpp
+        chatpage.cpp
+        dynamicgradientbg.cpp
+        createpage.cpp
+        addpage.cpp
         MyServer.cpp
-        MyServer.h
         MyClient.cpp
-        MyClient.h
         ChatManager.cpp
-        ChatManager.h
         DeveloperPage.cpp
+)
+
+set(HEADERS
+        appconfig.h
+        databasemanager.h
+        protocol.h
+        loginpage.h
+        poolmanager.h
+        mainpage.h
+        chatpage.h
+        dynamicgradientbg.h
+        createpage.h
+        addpage.h
+        MyServer.h
+        MyClient.h
+        ChatManager.h
         DeveloperPage.h
+)
+
+set(UI_FILES
+        loginpage.ui
+        mainpage.ui
+        chatpage.ui
+        createpage.ui
+        addpage.ui
         DeveloperPage.ui
-
 )
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
-target_link_libraries(Heart
-    PRIVATE Qt5::Core
-    PRIVATE Qt5::Gui
-    PRIVATE Qt5::Widgets
-    PRIVATE Qt5::Network
-    PRIVATE Qt5::Sql
-    PRIVATE Qt5::Charts
+set(RESOURCES
+        res.qrc
 )
 
-# DLL复制逻辑保持不变
+add_executable(${PROJECT_NAME}
+        ${SOURCES}
+        ${HEADERS}
+        ${UI_FILES}
+        ${RESOURCES}
+)
+
+target_link_libraries(${PROJECT_NAME}
+        PRIVATE Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Network Qt5::Sql Qt5::Charts
+)
+
+# 复制 Qt DLL
 if (WIN32 AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
-    set(DEBUG_SUFFIX)
+    set(DEBUG_SUFFIX "")
     if (MSVC AND CMAKE_BUILD_TYPE MATCHES "Debug")
         set(DEBUG_SUFFIX "d")
-    endif ()
+    endif()
+
     set(QT_INSTALL_PATH "${CMAKE_PREFIX_PATH}")
     if (NOT EXISTS "${QT_INSTALL_PATH}/bin")
         set(QT_INSTALL_PATH "${QT_INSTALL_PATH}/..")
-        if (NOT EXISTS "${QT_INSTALL_PATH}/bin")
-            set(QT_INSTALL_PATH "${QT_INSTALL_PATH}/..")
-        endif ()
-    endif ()
+    endif()
+
+    # 平台插件
     if (EXISTS "${QT_INSTALL_PATH}/plugins/platforms/qwindows${DEBUG_SUFFIX}.dll")
         add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
                 COMMAND ${CMAKE_COMMAND} -E make_directory
-                "$<TARGET_FILE_DIR:${PROJECT_NAME}>/plugins/platforms/")
-        add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+                "$<TARGET_FILE_DIR:${PROJECT_NAME}>/plugins/platforms/"
                 COMMAND ${CMAKE_COMMAND} -E copy
                 "${QT_INSTALL_PATH}/plugins/platforms/qwindows${DEBUG_SUFFIX}.dll"
-                "$<TARGET_FILE_DIR:${PROJECT_NAME}>/plugins/platforms/")
-    endif ()
-    foreach (QT_LIB Core Gui Widgets Charts)
+                "$<TARGET_FILE_DIR:${PROJECT_NAME}>/plugins/platforms/"
+        )
+    endif()
+
+    # Qt 核心 DLL
+    foreach(QT_LIB Core Gui Widgets Charts Network Sql)
         add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
                 COMMAND ${CMAKE_COMMAND} -E copy
                 "${QT_INSTALL_PATH}/bin/Qt5${QT_LIB}${DEBUG_SUFFIX}.dll"
-                "$<TARGET_FILE_DIR:${PROJECT_NAME}>")
-    endforeach ()
-endif ()
+                "$<TARGET_FILE_DIR:${PROJECT_NAME}>"
+        )
+    endforeach()
+endif()

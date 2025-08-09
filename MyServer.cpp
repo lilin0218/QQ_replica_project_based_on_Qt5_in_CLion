@@ -1,5 +1,4 @@
 #include "MyServer.h"
-#include <QDataStream>
 #include <QDebug>
 
 #include "ChatManager.h"

@@ -1,12 +1,9 @@
 #include "loginpage.h"
-
 #include <QFileDialog>
 #include <ui_DeveloperPage.h>
-
 #include "DeveloperPage.h"
 #include "ui_loginpage.h"
 #include "dynamicgradientbg.h"
-#include "MyServer.h"
 
 LoginPage::LoginPage(DatabaseManager &dbManager, QWidget *parent):QWidget(parent),m_dbManager(dbManager),ui(new Ui::LoginPage) {
     ui->setupUi(this);
@@ -166,7 +163,7 @@ void LoginPage::richTextExSet(QLabel *label, int id) {
 }
 
 void LoginPage::generateTestUsers(DatabaseManager& db) {
-    const int userCount = 10;
+    const int userCount = 30;
     QVector<int> userIds;
     int successCount = 0;
 

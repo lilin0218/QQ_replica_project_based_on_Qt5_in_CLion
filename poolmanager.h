@@ -9,13 +9,6 @@
 #include <exception>       // 提供标准异常处理支持
 #include <stdexcept>       // 提供标准运行时异常支持
 
-/**
- * @class PoolManager
- * @brief 线程池管理工具类，用于提交异步任务并处理结果
- *
- * 这是一个纯工具类，所有方法均为静态方法，不可实例化。
- * 提供将任务提交到线程池执行并在完成后在主线程回调的功能。
- */
 class PoolManager
 {
 public:
@@ -27,20 +20,7 @@ public:
     using CallbackFunction = std::function<void(QVariant)>;
     // 定义错误处理函数类型：接受标准异常引用
     using ErrorHandler = std::function<void(const std::exception&)>;
-    /**
-     * @brief 提交异步任务到线程池
-     *
-     * @param work 需要在后台线程执行的任务函数
-     * @param callback 任务完成后在主线程执行的回调函数(可选)
-     * @param pool 使用的线程池实例(可选，默认使用全局线程池)
-     * @param errorHandler 任务执行出错时的异常处理函数(可选)
-     *
-     * 功能说明：
-     * 1. 任务在后台线程中执行
-     * 2. 任务结果通过QVariant传递
-     * 3. 回调函数在主线程中执行
-     * 4. 支持自定义异常处理
-     */
+
     static void submit(
         TaskFunction work,
         CallbackFunction callback = nullptr,
@@ -50,13 +30,7 @@ public:
         // 定义任务运行器内部类（继承自QRunnable）
         class TaskRunner : public QRunnable {
         public:
-            /**
-             * @brief 任务运行器构造函数
-             *
-             * @param task 要执行的任务函数
-             * @param cb 任务完成后的回调函数
-             * @param eh 异常处理函数
-             */
+
             TaskRunner(TaskFunction task, CallbackFunction cb, ErrorHandler eh)
                 : m_task(std::move(task)),      // 移动任务函数到成员变量
                   m_callback(std::move(cb)),    // 移动回调函数到成员变量

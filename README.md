@@ -43,56 +43,19 @@
 6.  所有聊天数据与好友关系持久化存储于 SQLite 数据库中
 7. 开发者页面支持数据可视化： 输出当前用户的好友数量柱状图 & 输出当前用户的好友数量饼状图
 
-#### 截图展示
+#### 参与贡献
 
-<h4>1. 登录 / 注册 / 注销：</h4>
-<table>
-  <tr>
-    <td><img src="https://github.com/user-attachments/assets/27c71930-26f0-49a5-93b2-c6f3a9e8b0e4" width="300"/></td>
-    <td><img src="https://github.com/user-attachments/assets/93403ed9-14e1-4f3b-88ce-9088b20104f5" width="300"/></td>
-    <td><img src="https://github.com/user-attachments/assets/09a594d7-ab94-48d4-bfe6-1180ffd7e041" width="300"/></td>
-  </tr>
-</table>
-
-<h4>2. 主浏览界面：</h4>
-<img src="https://github.com/user-attachments/assets/a093e128-3064-4fb6-9591-25ee3017025d" width="300"/>
-
-<h4>3. 添加 / 删除好友：</h4>
-<table>
-  <tr>
-    <td><img src="https://github.com/user-attachments/assets/d07633d7-ab67-4c2e-b3fb-b866e036fc87" width="350"/></td>
-    <td><img src="https://github.com/user-attachments/assets/f45762b8-25d1-4a4d-8a1b-f674d885f5a7" width="350"/></td>
-  </tr>
-</table>
-
-<h4>4. 新建群聊（仅界面，未完成功能）：</h4>
-<img src="https://github.com/user-attachments/assets/664e1225-61ba-4ef8-acd5-dfbf535ff04b" width="300"/>
-
-<h4>5. 聊天界面（10号 / 9号视角）：</h4>
-<table>
-  <tr>
-    <td><img src="https://github.com/user-attachments/assets/d14114d7-542e-4078-a47c-8b36f52ac0d9" width="350"/></td>
-    <td><img src="https://github.com/user-attachments/assets/3727dbe4-ccb7-43cf-8c4c-d769fc25e8ba" width="350"/></td>
-  </tr>
-</table>
-
-<h4>6. 开发者功能图表（柱图 / 饼图）：</h4>
-<table>
-  <tr>
-    <td><img src="https://github.com/user-attachments/assets/feb9c859-6512-4bc5-9e84-ed258b276f9b" width="350"/></td>
-    <td><img src="https://github.com/user-attachments/assets/812d70ed-e9e8-4222-badc-84d5d59952ec" width="350"/></td>
-  </tr>
-</table>
+1.  Fork 本仓库
+2.  新建 Feat_xxx 分支
+3.  提交代码
+4.  新建 Pull Request
 
 
+#### 特技
 
-
-
-
-
-
-
-
-
-
-
+1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
+2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
+3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
+4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
+5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
+6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
