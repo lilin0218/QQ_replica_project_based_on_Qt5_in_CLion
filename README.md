@@ -7,6 +7,9 @@
 ，使用 **SQLite 数据库** 进行用户信息与消息数据的本地持久化。代码管理通过
 **Git 仓库**完成同步与版本控制。
 
+#### 演示视频
+https://www.bilibili.com/video/BV1sut4zuECU/?spm_id_from=333.1387.homepage.video_card.click&vd_source=1f2d69d79214903797e2e27c77ae0b3d
+
 #### 软件架构
 本项目采用模块化设计，主要模块如下：
 
@@ -87,5 +90,6 @@
     <td><img src="https://github.com/user-attachments/assets/812d70ed-e9e8-4222-badc-84d5d59952ec" width="350"/></td>
   </tr>
 </table>
+
 
 
