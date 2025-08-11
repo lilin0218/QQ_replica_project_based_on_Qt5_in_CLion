@@ -69,7 +69,7 @@
   </tr>
 </table>
 
-<h4>4. 新建群聊（UI未完成）：</h4>
+<h4>4. 新建群聊（仅UI，未完成实际群聊功能）：</h4>
 <img src="https://github.com/user-attachments/assets/664e1225-61ba-4ef8-acd5-dfbf535ff04b" width="300"/>
 
 <h4>5. 聊天界面（10号 / 9号视角）：</h4>
@@ -87,4 +87,5 @@
     <td><img src="https://github.com/user-attachments/assets/812d70ed-e9e8-4222-badc-84d5d59952ec" width="350"/></td>
   </tr>
 </table>
+
 
